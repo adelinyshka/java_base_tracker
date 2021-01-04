@@ -14,6 +14,18 @@ public class TriangleTest {
         Point c = new Point(0, 4);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
+        System.out.println(rsl);
         assertThat(rsl, closeTo(8, 0.001));
+    }
+
+    @Test
+    public void period2() {
+        Point a = new Point(1, 1);
+        Point b = new Point(4, 4);
+        Point c = new Point(3, 2);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        System.out.println(rsl);
+        assertThat(rsl, closeTo(1.5, 0.001));
     }
 }

@@ -7,15 +7,22 @@ public class Item {
     public Item() {}
 
     public Item(int id) {
+        this.id = id;
     }
 
     public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public static void main(String[] args) {
         Item newTest = new Item();
         Item secondTest = new Item(2);
         Item thirdTest = new Item(3, "TestName");
+        System.out.println(newTest);
+        System.out.println(secondTest.id);
+        System.out.println(thirdTest.name);
+
     }
 
     public int getId() {

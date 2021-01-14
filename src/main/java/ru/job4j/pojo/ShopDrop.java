@@ -6,6 +6,7 @@ public class ShopDrop {
                 products[j] = products[j + 1];
                 products[j + 1] = null;
         }
+        products[products.length - 1] = null;
         return products;
     }
 }

@@ -22,16 +22,6 @@ public class Item {
         this.name = name;
     }
 
-    public static void main(String[] args) {
-        Item newTest = new Item();
-        Item secondTest = new Item(2);
-        Item thirdTest = new Item(3, "TestName");
-        System.out.println(newTest);
-        System.out.println(secondTest.id);
-        System.out.println(thirdTest.name);
-        System.out.println(thirdTest.getCreated());
-    }
-
     public int getId() {
         return id;
     }
@@ -46,5 +36,15 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Item newTest = new Item();
+        Item secondTest = new Item(2);
+        Item thirdTest = new Item(3, "TestName");
+        System.out.println(newTest);
+        System.out.println(secondTest.id);
+        System.out.println(thirdTest.name);
+        System.out.println(thirdTest.getCreated());
     }
 }

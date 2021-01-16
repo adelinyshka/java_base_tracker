@@ -9,8 +9,9 @@ public class StartUI {
         String newFormat = some.getCreated().format(formatter);
         System.out.println(newFormat);
 
-        Item second = new Item(1,"Kelly go shopping");
+
         Tracker tracker = new Tracker();
+        Item second = new Item(1,"Kelly goes shopping");
         tracker.add(second);
         Item kelly = tracker.findById(1);
         System.out.println(kelly);

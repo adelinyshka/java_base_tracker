@@ -24,22 +24,20 @@ public class Tracker {
                 size++;
             }
         }
-        namesWithoutNull = Arrays.copyOf(namesWithoutNull, size);
-        return namesWithoutNull;
+        return Arrays.copyOf(namesWithoutNull, size);
     }
 
     public Item[] findByName(String key) {
-        Item[] neededName = new Item[items.length];
-        int size = 0;
-        for(int i = 0; i < items.length; i++) {
+        int junk = 0;
+        Item[] neededName = new Item[this.size];
+        for(int i = 0; i < this.size; i++) {
             Item name = items[i];
             if(key.equals(name.getName())) {
-                neededName[size] = name;
+                neededName[junk] = name;
                 size++;
             }
         }
-        neededName = Arrays.copyOf(neededName, size);
-        return neededName;
+        return Arrays.copyOf(neededName, size);
     }
 
     public Item findById(int id) {

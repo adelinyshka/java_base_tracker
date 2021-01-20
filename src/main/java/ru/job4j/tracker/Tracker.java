@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Tracker {

@@ -15,5 +15,8 @@ public class StartUI {
 
         System.out.println(newFormat);
         System.out.println(kelly);
+
+        Item bobby = new Item(1,"Do something useful");
+        System.out.println(bobby.toString());
     }
 }

@@ -23,6 +23,15 @@ public class Item {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                '}';
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -37,15 +46,6 @@ public class Item {
 
     public int getId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created=" + created +
-                '}';
     }
 
     public static void main(String[] args) {

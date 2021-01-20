@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -56,24 +57,32 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean replace(int id, Item item) {
-        int neededIndex = indexOf(id);
-        int neededId = items[neededIndex].getId();
-        if (neededIndex != -1) {
-            items[neededIndex] = item;
-            items[neededIndex].setId(neededId);
-            return true;
+    public Serializable replace(int id, Item item) {
+        if(id < 0) {
+            return "Id is less then 0, its not possible to find it";
         } else {
-            return false;
+            int neededIndex = indexOf(id);
+            int neededId = items[neededIndex].getId();
+            if (neededIndex != -1) {
+                items[neededIndex] = item;
+                items[neededIndex].setId(neededId);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
-    public boolean delete(int id) {
-        int index = indexOf(id);
-        int start = index + 1;
-        System.arraycopy(items, start, items, index, size - index);
-        items[size - 1] = null;
-        size--;
-        return true;
+    public Serializable delete(int id) {
+        if(id < 0) {
+            return "Id is less then 0, its not possible to find it";
+        } else {
+            int index = indexOf(id);
+            int start = index + 1;
+            System.arraycopy(items, start, items, index, size - index);
+            items[size - 1] = null;
+            size--;
+            return true;
+        }
     }
 }

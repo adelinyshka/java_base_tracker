@@ -59,7 +59,6 @@ public class Tracker {
     public boolean replace(int id, Item item) {
         int neededIndex = indexOf(id);
         int neededId = items[neededIndex].getId();
-        System.out.println(id);
         if (neededIndex != -1) {
             items[neededIndex] = item;
             items[neededIndex].setId(neededId);
@@ -67,20 +66,5 @@ public class Tracker {
         } else {
             return false;
         }
-    }
-
-    public static void main(String[] args) {
-            Tracker tracker = new Tracker();
-            Item bug = new Item();
-            bug.setName("Bug");
-            tracker.add(bug);
-            int id = bug.getId();
-            System.out.println(id);
-            System.out.println(Arrays.toString(tracker.findAll()));
-
-            Item bugWithDesc = new Item();
-            bugWithDesc.setName("Bug with description");
-            tracker.replace(id, bugWithDesc);
-            System.out.println(Arrays.toString(tracker.findAll()));
     }
 }

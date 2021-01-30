@@ -73,7 +73,7 @@ public class Tracker {
     }
 
     public Serializable delete(int id) {
-        if(id < 0) {
+        if (id < 0) {
             return "Id is less then 0, its not possible to find it";
         } else {
             int index = indexOf(id);

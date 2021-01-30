@@ -59,7 +59,7 @@ public class StartUI {
                 int idToFind = Integer.valueOf(scanner.nextLine());
                 Item founded = tracker.findById(idToFind);
                 if (founded != null) {
-                    System.out.println("Item was founded. Its name is " + founded.getName());
+                    System.out.println(founded);
                 } else {
                     System.out.println("Item wasn't founded. Try again, please");
                 }

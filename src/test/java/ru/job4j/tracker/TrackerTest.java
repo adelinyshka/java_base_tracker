@@ -64,6 +64,6 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(
                 tracker.delete(id),
-                is("Id is less then 0, its not possible to find it"));
+                is(false));
     }
 }

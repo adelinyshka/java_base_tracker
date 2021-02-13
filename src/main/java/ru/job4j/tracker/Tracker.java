@@ -17,9 +17,8 @@ public class Tracker {
     public Item[] findAll(){
         Item[] namesWithoutNull = new Item[items.length];
         int size = 0;
-        for(int i = 0; i < items.length; i++) {
-            Item name = items[i];
-            if(items[i] != null) {
+        for (Item name : items) {
+            if (name != null) {
                 namesWithoutNull[size] = name;
                 size++;
             }
@@ -64,16 +63,14 @@ public class Tracker {
         } return false;
     }
 
-    public Serializable delete(int id) {
+    public boolean delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
-            return false;
-        } else {
+        if (index != -1) {
             int start = index + 1;
             System.arraycopy(items, start, items, index, size - index);
-            items[size - 1] = null;
+            items[size--] = null;
             size--;
             return true;
-        }
+        } return false;
     }
 }

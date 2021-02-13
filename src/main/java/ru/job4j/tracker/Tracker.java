@@ -56,20 +56,12 @@ public class Tracker {
         return rsl;
     }
 
-    public Serializable replace(int id, Item item) {
-        if(id < 0) {
-            return "Id is less then 0, its not possible to find it";
-        } else {
-            int neededIndex = indexOf(id);
-            int neededId = items[neededIndex].getId();
-            if (neededIndex != -1) {
-                items[neededIndex] = item;
-                items[neededIndex].setId(neededId);
-                return true;
-            } else {
-                return false;
-            }
-        }
+    public boolean replace(int id, Item item) {
+        int neededIndex = indexOf(id);
+        if(neededIndex != -1) {
+            items[neededIndex] = item;
+            return true;
+        } return false;
     }
 
     public Serializable delete(int id) {

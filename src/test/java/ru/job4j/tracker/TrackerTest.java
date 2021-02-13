@@ -41,7 +41,7 @@ public class TrackerTest {
         tracker.replace(id, bugWithDesc);
         assertThat(
                 tracker.replace(id, bugWithDesc),
-                is("Id is less then 0, its not possible to find it"));
+                is(false));
     }
 
     @Test

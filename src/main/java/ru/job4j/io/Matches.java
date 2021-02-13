@@ -13,19 +13,12 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            if (matches == 3) {
-                count = count- 3;
-                System.out.println(count);
-                System.out.println("Спичек осталось: " + count);
-            } else if (matches == 2) {
-                count = count- 2;
-                System.out.println("Спичек осталось: " + count);
-            } else if (matches == 1) {
-                count = count- 1;
-                System.out.println("Спичек осталось: " + count);
-            } else {
+            if (matches > 3 || matches < 1) {
                 System.out.println("Можно взять от 1 до 3 спичек");
                 turn = !turn;
+            } else {
+                count -= matches;
+                System.out.println(count + "\n" + "Спичек осталось: " + count);
             }
         }
         if (!turn) {
